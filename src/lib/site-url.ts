@@ -1,0 +1,11 @@
+export function getSiteUrl(): string {
+  const production = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+  if (production) {
+    return `https://${production}`;
+  }
+  const vercel = process.env.VERCEL_URL;
+  if (vercel) {
+    return `https://${vercel}`;
+  }
+  return "http://localhost:3000";
+}

@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-primary: var(--color-primary-token);
+  --color-accent: var(--color-accent-token);
+  --color-bg: var(--color-bg-token);
+  --color-surface: var(--color-surface-token);
+  --color-text: var(--color-text-token);
+  --color-text-muted: var(--color-text-muted-token);
+  --color-border: var(--color-border-token);
+  --font-heading: var(--font-barlow);
+  --font-sans: var(--font-inter);
+  --font-ethiopic: var(--font-noto);
+}
+
+:root {
+  --color-primary-token: #0f3d2e;
+  --color-accent-token: #d4a017;
+  --color-bg-token: #ffffff;
+  --color-surface-token: #f5f7fa;
+  --color-text-token: #0a1f17;
+  --color-text-muted-token: #6b7280;
+  --color-border-token: #e5e7eb;
+}
+
+.dark {
+  --color-primary-token: #4ade80;
+  --color-accent-token: #fbbf24;
+  --color-bg-token: #0a1f17;
+  --color-surface-token: #112a20;
+  --color-text-token: #f5f7fa;
+  --color-text-muted-token: #9ca3af;
+  --color-border-token: #1f3a2e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg-token);
+  color: var(--color-text-token);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-barlow), var(--font-inter), ui-sans-serif, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+html[lang="am"] body {
+  font-family: var(--font-noto), var(--font-inter), ui-sans-serif, sans-serif;
+}
+
+html[lang="am"] h1,
+html[lang="am"] h2,
+html[lang="am"] h3,
+html[lang="am"] h4 {
+  font-family: var(--font-noto), var(--font-barlow), sans-serif;
+}
+
+::selection {
+  background: var(--color-accent-token);
+  color: #0a1f17;
+}

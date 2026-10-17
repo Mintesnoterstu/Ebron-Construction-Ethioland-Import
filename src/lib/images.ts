@@ -1,0 +1,37 @@
+export function publicImage(filename: string): string {
+  return `/images/${encodeURIComponent(filename)}`;
+}
+
+export const IMAGES = {
+  hero: publicImage("welcom baner.jpg"),
+  heroSite: publicImage("site from ground.jpg"),
+  about: publicImage("high postion managers in site.jpg"),
+  partner: publicImage("image with partner.jpg"),
+  contract: publicImage("contrat with partner.jpg"),
+  machines: publicImage("machines.jpg"),
+  machines2: publicImage("machines2.jpg"),
+  building: publicImage("building.webp"),
+  buildingG6: publicImage("building G+6.webp"),
+  commercial: publicImage("big progect they bild.jpg"),
+  commercialAerial: publicImage("buitfile view big project building.jpg"),
+  sanku: publicImage("view of (sanku) from out side.jpg"),
+  sankuFinished: publicImage("big project after finishing (for sanku).jpg"),
+  finishing: publicImage("finishing.webp"),
+  finishing2: publicImage("finishing2.webp"),
+  finishingOutside: publicImage("after finishing outside.webp"),
+  buildingOutside: publicImage("building out side.jpg"),
+  onSite: publicImage("building on site.webp"),
+  starting: publicImage("starting building.webp"),
+  working: publicImage("working on site.jpg"),
+  worker: publicImage("worker on site.webp"),
+  worker1: publicImage("worker on site1.jpg"),
+  workerIn: publicImage("worker in site.jpg"),
+  inside: publicImage("inside.jpg"),
+  insideBuilding: publicImage("inside building.webp"),
+  buildingInside: publicImage("building inside.jpg"),
+  road: publicImage("road in organzation.webp"),
+  corridor: publicImage("finishing colider.webp"),
+  finishedInterior: publicImage("worker inside finished building.webp"),
+  buildingFinishing: publicImage("building for finishing.webp"),
+  bigBuildingFinishing: publicImage("big building in finishing.webp"),
+} as const;
