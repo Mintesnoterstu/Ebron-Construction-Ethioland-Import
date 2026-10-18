@@ -1,11 +1,19 @@
 "use client";
 
-import { Mail, MapPin, Phone, Facebook } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { COMPANY, SITE_IMAGES } from "@/data/constants";
 import { useLanguage } from "@/context/language";
 import { PageHero } from "@/components/ui/PageHero";
 import { CtaBand } from "@/components/ui/CtaBand";
 import { ContactForm } from "@/components/contact/ContactForm";
+
+function FacebookIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M14 8h3V4h-3c-2.8 0-5 2.2-5 5v2H7v4h2v8h4v-8h3l1-4h-4V9c0-.6.4-1 1-1z" />
+    </svg>
+  );
+}
 
 export function ContactPage() {
   const { t } = useLanguage();
@@ -13,7 +21,7 @@ export function ContactPage() {
     { icon: Phone, label: t.contact.hotline, value: COMPANY.hotlineDisplay, href: `tel:${COMPANY.hotlineTel}` },
     { icon: Mail, label: t.contact.email, value: COMPANY.email, href: `mailto:${COMPANY.email}` },
     { icon: MapPin, label: t.contact.address, value: COMPANY.address, href: undefined },
-    { icon: Facebook, label: t.contact.facebook, value: COMPANY.name, href: COMPANY.facebook },
+    { icon: FacebookIcon, label: t.contact.facebook, value: COMPANY.name, href: COMPANY.facebook },
   ];
 
   return (

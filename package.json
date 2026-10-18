@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint"
+  },
+  "allowScripts": {
+    "unrs-resolver@1.12.2": true
   },
   "dependencies": {
     "framer-motion": "^14.3.0",
