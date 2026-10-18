@@ -1,5 +1,9 @@
 import type { Lang } from "@/lib/types";
 
+type StringLeaves<T> = {
+  [K in keyof T]: T[K] extends string ? string : StringLeaves<T[K]>;
+};
+
 const en = {
   skip: "Skip to content",
   langToggle: "Switch language",
@@ -290,7 +294,9 @@ const en = {
   },
 } as const;
 
-const am: typeof en = {
+export type Translations = StringLeaves<typeof en>;
+
+const am: Translations = {
   skip: "ወደ ይዘት ይዝለሉ",
   langToggle: "ቋንቋ ቀይር",
   themeToggle: "ገጽታ ቀይር",
@@ -560,9 +566,7 @@ const am: typeof en = {
   },
 };
 
-export const translations: Record<Lang, typeof en> = { en, am };
-
-export type Translations = typeof en;
+export const translations: Record<Lang, Translations> = { en, am };
 
 export const LANG_STORAGE_KEY = "ebron-lang";
 export const LANG_COOKIE_KEY = "ebron-lang";
